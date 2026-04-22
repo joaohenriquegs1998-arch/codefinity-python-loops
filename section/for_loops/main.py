@@ -3,6 +3,8 @@ countries = ['Wales', 'Denmark', 'Belgium', 'Japan', 'South Korea', 'South Afric
 
 # List of visited countires
 travel_list = []
+for country in  countries:
+    travel_list.append(country)
 
 # Testing
 print("Countries to visit:", travel_list)
