@@ -1,18 +1,21 @@
-# List of country names
-countries = ['Wales', 'Denmark', 'Belgium', 'Japan', 'South Korea', 'South Africa', 'Indonesia', 'Singapore', 'Australia', 'India', 'Saudi Arabia', 'Mexico', 'Turkey', 'Greece', 'Netherlands', 'Finland', 'Monako', 'United Arab Emirates', 'Egypt', 'Morocco', 'Brazil', 'Argentina', 'Ireland', 'Portugal', 'Chile', 'Spain', 'Czech Republic', 'Sweden', 'Switzerland', 'Thailand', 'Luxemburg', 'New Zealand', 'France', 'Italy', 'Germany', 'China', 'Canada', 'Hungary', 'Scotland', 'Norway', 'Austria', 'Ukraine', 'Poland']
+# Travel expenses for multiple trips
+travel_costs = [[500, 150, 100, 50], [200, 300, 120, 80], [180, 220, 130, 170], [600, 250, 200, 90], [300, 180, 150, 70], [400, 320, 110, 100], [550, 270, 180, 60], [250, 190, 140, 120], [700, 350, 210, 110], [450, 230, 160, 95], [320, 280, 190, 85], [580, 260, 175, 75], [630, 300, 220, 130], [280, 210, 125, 140], [490, 330, 145, 105], [520, 340, 190, 125], [750, 400, 250, 150], [340, 270, 160, 115], [620, 310, 225, 135], [410, 290, 135, 90]]
 
-# List to hold selected countries
-selected = []
-
-i = 0
-
-while i < len(countries) and len(selected) < 3:
-    if countries[i].startswith("S"):
-        selected.append(countries[i])
-    i += 1
-       
+# List to store the first significant expense of each trip
+significant_expenses = []
+for trips in travel_costs:
+    for expense in trips:
+        if expense <= 100:
+            continue
+        if expense > 200:
+            significant_expenses.append(expense)
+            break
             
 
 
+
+
+
+
 # Testing
-print('First three countries starting with "S":', selected)
+print('First Significant Expenses:', significant_expenses)
